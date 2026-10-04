@@ -1,0 +1,20 @@
+{
+  "name": "nassautickets-backend",
+  "version": "0.1.0",
+  "description": "API REST do nassauTickets - Sistema de Controle de Atendimento",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test tests/regras.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
