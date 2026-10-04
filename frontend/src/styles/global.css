@@ -1,0 +1,154 @@
+/* ===== Identidade visual nassauTickets (ver docs/branding) ===== */
+:root {
+  --cor-primaria: #0057a8;
+  --cor-secundaria: #00a19a;
+  --cor-sp: #c62828;
+  --cor-se: #6a1b9a;
+  --cor-sg: #0057a8;
+  --cor-sucesso: #2e7d32;
+  --cor-aviso: #9a5b00;
+  --cor-perigo: #c62828;
+  --cor-fundo: #f4f7fb;
+  --cor-texto: #1a2433;
+  --cor-borda: #d5dde8;
+  --raio: 12px;
+  --sombra: 0 2px 8px rgba(0, 40, 90, 0.08);
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.5; }
+h1 { margin: 0 0 0.25rem; font-size: 1.8rem; }
+h2 { font-size: 1.2rem; }
+code { background: #e8eef6; padding: 0 4px; border-radius: 4px; }
+
+/* Acessibilidade: foco sempre visível e link para pular navegação */
+:focus-visible { outline: 3px solid #ffb300; outline-offset: 2px; }
+.pular-link { position: absolute; left: -999px; }
+.pular-link:focus { left: 8px; top: 8px; background: #fff; padding: 8px; z-index: 10; }
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  padding: 0.75rem 1.5rem; background: var(--cor-primaria); color: #fff;
+}
+.marca { display: flex; align-items: center; gap: 0.5rem; color: #fff; text-decoration: none; font-size: 1.3rem; }
+.cabecalho nav { display: flex; gap: 1rem; flex: 1; }
+.cabecalho nav a { color: #dce9f7; text-decoration: none; padding: 0.25rem 0.5rem; border-radius: 6px; }
+.cabecalho nav a.active, .cabecalho nav a:hover { background: rgba(255, 255, 255, 0.18); color: #fff; }
+.usuario-logado { display: flex; align-items: center; gap: 0.75rem; }
+
+.conteudo { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+.subtitulo { color: #4a5a70; margin-top: 0; }
+
+/* ===== Faixas de status (recuperação de falhas) ===== */
+.faixa-alerta { padding: 0.6rem 1.5rem; font-weight: 600; text-align: center; }
+.faixa-erro { background: #fde7e7; color: #8e1b1b; }
+.faixa-aviso { background: #fff4d6; color: #6b4a00; }
+
+/* ===== Botões ===== */
+.botao {
+  display: inline-block; border: none; border-radius: 8px; padding: 0.7rem 1.2rem;
+  font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none;
+  background: var(--cor-primaria); color: #fff;
+}
+.botao:disabled { opacity: 0.4; cursor: not-allowed; }
+.botao-secundario { background: #fff; color: var(--cor-primaria); border: 2px solid var(--cor-primaria); }
+.botao-sucesso { background: var(--cor-sucesso); }
+.botao-aviso { background: var(--cor-aviso); }
+.botao-perigo { background: var(--cor-perigo); }
+.grupo-botoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+
+/* ===== Cartões ===== */
+.cartao { background: #fff; border-radius: var(--raio); box-shadow: var(--sombra); padding: 1.5rem; margin-top: 1rem; }
+.grade-modulos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.cartao-modulo {
+  display: flex; flex-direction: column; gap: 0.4rem; padding: 1.5rem; background: #fff;
+  border-radius: var(--raio); box-shadow: var(--sombra); color: inherit; text-decoration: none;
+  border-top: 5px solid var(--cor-secundaria);
+}
+.cartao-modulo:hover { transform: translateY(-2px); }
+.cartao-modulo-icone { font-size: 2rem; }
+
+.cartao-senha {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  padding: 1rem 1.5rem; border-radius: var(--raio); color: #fff; min-width: 220px;
+}
+.cartao-senha.destaque { padding: 2rem; }
+.cartao-senha.destaque .cartao-senha-numero { font-size: 3rem; }
+.cartao-senha-numero { font-size: 1.8rem; letter-spacing: 1px; }
+.cartao-senha-tipo { text-transform: uppercase; font-size: 0.85rem; opacity: 0.9; }
+.cartao-senha-guiche { font-size: 1.3rem; font-weight: 700; }
+.selo { position: absolute; top: -10px; background: #ffb300; color: #1a1a1a; padding: 2px 10px; border-radius: 20px; font-weight: 700; font-size: 0.8rem; }
+.tipo-sp { background: var(--cor-sp); }
+.tipo-se { background: var(--cor-se); }
+.tipo-sg { background: var(--cor-sg); }
+
+.grade-indicadores { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.cartao-indicador { background: #fff; border-radius: var(--raio); padding: 1rem; box-shadow: var(--sombra); display: flex; flex-direction: column; }
+.cartao-indicador-titulo { color: #4a5a70; font-size: 0.9rem; }
+.cartao-indicador-valor { font-size: 1.8rem; color: var(--cor-primaria); }
+.cartao-indicador-detalhe { font-size: 0.8rem; color: #4a5a70; }
+
+/* ===== Totem ===== */
+.totem { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.totem-opcoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; width: 100%; }
+.botao-totem {
+  display: flex; flex-direction: column; gap: 0.5rem; padding: 2.5rem 1rem; border: none;
+  border-radius: var(--raio); color: #fff; cursor: pointer; box-shadow: var(--sombra);
+}
+.botao-totem:disabled { opacity: 0.5; }
+.botao-totem-titulo { font-size: 1.8rem; font-weight: 700; }
+.botao-totem-descricao { font-size: 1rem; }
+.nota-lgpd { color: #4a5a70; font-size: 0.9rem; }
+
+/* ===== Painel ===== */
+.painel-topo { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.painel-grade { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-top: 1rem; }
+.painel-atual { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.painel-atual .cartao-senha { width: 100%; }
+.painel-atual .cartao-senha-numero { font-size: 4.5rem; }
+.painel-atual .cartao-senha-guiche { font-size: 2.2rem; }
+.painel-anteriores ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+.painel-vazio { font-size: 1.5rem; text-align: center; margin-top: 3rem; color: #4a5a70; }
+.painel-hora { color: #4a5a70; }
+
+/* ===== Atendente ===== */
+.area-atendimento { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+.cronometro { font-size: 1.6rem; font-weight: 700; }
+
+/* ===== Formulários ===== */
+.formulario-login { max-width: 420px; margin: 2rem auto; }
+.formulario-login form { display: flex; flex-direction: column; gap: 0.5rem; }
+.formulario-linha { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+label { font-weight: 600; }
+input, select { padding: 0.6rem; border: 1px solid var(--cor-borda); border-radius: 8px; font-size: 1rem; }
+.dica { font-size: 0.85rem; color: #4a5a70; }
+
+/* ===== Mensagens ===== */
+.mensagem { padding: 0.6rem 1rem; border-radius: 8px; margin: 0.5rem 0; }
+.mensagem-erro { background: #fde7e7; color: #8e1b1b; }
+.mensagem-sucesso { background: #e5f5e7; color: #1b5e20; }
+.mensagem-aviso { background: #fff4d6; color: #6b4a00; }
+.mensagem-info { background: #e6f0fb; color: #0d3c6e; }
+
+/* ===== Abas e tabelas ===== */
+.abas { display: flex; gap: 0.5rem; margin-top: 1rem; }
+.aba { border: none; background: #e3eaf3; padding: 0.6rem 1.2rem; border-radius: 8px 8px 0 0; cursor: pointer; font-weight: 600; }
+.aba.ativa { background: #fff; color: var(--cor-primaria); }
+.tabela-container { overflow-x: auto; margin: 1.5rem 0; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+caption { text-align: left; font-weight: 700; font-size: 1.1rem; padding: 0.5rem 0; }
+th, td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--cor-borda); text-align: left; font-size: 0.9rem; }
+th { background: #eef3f9; }
+
+@media (max-width: 800px) {
+  .painel-grade { grid-template-columns: 1fr; }
+  .painel-atual .cartao-senha-numero { font-size: 2.8rem; }
+}
+
+@media print {
+  .cabecalho, .faixa-alerta, .abas, form { display: none; }
+}
