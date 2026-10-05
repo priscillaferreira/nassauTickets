@@ -1,0 +1,61 @@
+# ===== Node.js =====
+# Dependências (são reinstaladas com "npm install")
+node_modules/
+jspm_packages/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Relatórios de diagnóstico do Node
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Dados de execução
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Cobertura de testes
+coverage/
+.nyc_output/
+*.lcov
+
+# Builds
+dist/
+build/
+.vite/
+.cache/
+.parcel-cache/
+.next/
+out/
+
+# Variáveis de ambiente (NUNCA versionar senhas/segredos)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Caches de ferramentas
+.npm/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Pacotes gerados
+*.tgz
+.yarn-integrity
+
+# ===== Editores e sistema operacional =====
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
